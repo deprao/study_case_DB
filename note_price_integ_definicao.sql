@@ -6,12 +6,6 @@ CREATE TABLE Loja_cadastrada(
 	PRIMARY KEY(nome)
 );
 
-CREATE TABLE Loja_fornecedora(
-	Nome text,
-	Website text,
-	PRIMARY KEY(nome)
-);
-
 CREATE TABLE Notebook_gamer(
 	Modelo text PRIMARY KEY,
 	Sist_Op text,
