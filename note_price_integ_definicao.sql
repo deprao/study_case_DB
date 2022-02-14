@@ -7,40 +7,34 @@ CREATE TABLE Loja_cadastrada(
 );
 
 CREATE TABLE Notebook_gamer(
-	Modelo text PRIMARY KEY,
+	id SERIAL PRIMARY KEY,
+	Modelo text,
 	Sist_Op text,
 	Memo_RAM text,
 	Placa_video text,
 	Processador text,
 	Armazena_HD text,
 	Armazena_SSD text,
-	UNIQUE(Sist_Op, Memo_RAM, Placa_video, Processador, 
-			Armazena_HD, Armazena_SSD)
+	preco text,
+	marca text
 );
 
-CREATE TABLE NG_Ofertado(
-	Marca text,
-	Preço float,
-	Descriçao text
-)INHERITS(Notebook_gamer);
-
 CREATE TABLE NG_Coletado(
-	Preço float,
-	Loja_retirada text REFERENCES Loja_cadastrada (Nome),
-	Data_coleta date
+	Loja_retirada text,
+	Data_coleta text,
 )INHERITS(Notebook_gamer);
 
 CREATE TABLE Avaliacoes(
-	Nota float,
-	Descriçao text,
-	Nome_avaliador text,
-	Data_avaliaçao date,
-	UNIQUE(Nome_avaliador, Data_avaliaçao, Descriçao)
+	Modelo text,
+	Nota text,
+	Comentários text[],
+	Avaliadores text[],
 );
 
 CREATE TABLE Crawlers(
+	id SERIAL PRIMARY KEY,
 	Versao text,
-	Data_inclusao date,
-	Data_Alteracao date,
-	Loja_coleta text PRIMARY KEY,
+	Data_inclusao text,
+	Data_Alteracao text,
+	Loja_coleta text,
 );
