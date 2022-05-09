@@ -1,0 +1,96 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Graficos - Quantidade de Insercao</title>
+    <script
+            src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script type="text/javascript"
+            src="https://www.gstatic.com/charts/loader.js"></script>
+
+</head>
+<body>
+<div class = "container-fluid">
+    <div class="row_header">
+        <h2>Avaliacoes</h2>
+        <a href="/GraphMenuSiteInfo" type="button" class="btn btn-secondary">Voltar</a>
+        <hr/>
+    </div>
+    <div id="piechart" style="width: 900px; height: 500px;"></div>
+</div>
+
+
+
+<script th:inline="javascript">
+    var real_data = /*[[${chartData}]]*/'noValue';
+    $(document).ready(function() {
+        google.charts.load('current', {
+            packages : [ 'corechart', 'bar', 'line' ]
+        });
+        google.charts.setOnLoadCallback(drawPieChart);
+    });
+
+    function drawPieChart() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Avaliacoes');
+        data.addColumn('number', 'Quantidade de Notebooks');
+        Object.keys(real_data).forEach(function(key) {
+            data.addRow([ key, real_data[key] ]);
+        });
+        var options = {
+            title : 'Distribuicao de Notebooks com avaliacoes e sem avaliacoes'
+        };
+        var chart = new google.visualization.PieChart(document
+            .getElementById('piechart'));
+        chart.draw(data, options);
+    }
+
+</script>
+</body>
+
+<style>
+    .container-fluid {
+        padding: 0 !important;
+        height: 100%;
+        background-color: #dcdcdc;
+    }
+    .row_header{
+        height:10%;
+        background-color: #d3d3d3;
+        padding: 1%;
+    }
+    .row1{
+        height:10%;
+        background-color: #696969;
+        padding: 1%;
+    }
+    .row-content{
+        height:80%;
+        background-color: #dcdcdc;
+        padding: 1%;
+    }
+    .row-content-1{
+        height:20%;
+        background-color: #dcdcdc;
+        margin: auto;
+    }
+    .row-content-2{
+        height:20%;
+        background-color: #dcdcdc;
+        margin: auto;
+        padding-top: 2%;
+    }
+    .btn-success {
+        width: 100%;
+        background-color: #34495E;
+        border-radius: 12px;
+        transition-duration: 0.4s;
+        padding: 3%;
+    }
+
+
+</style>
+
+</html>

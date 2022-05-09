@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Filtrar Pesquisa</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+          crossorigin="anonymous">
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+          integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+          crossorigin="anonymous" />
+</head>
+
+<body>
+
+<div class="container-fluid">
+    <div class="row_header">
+    </div>
+    <div class="row1">
+        <div class="col text-left">
+            <a href="/Listar-NG" type="button" class="btn btn-outline-light">Listar noteboooks gamer</a>
+            <a href="/Listar-NG_Coletados" type="button" class="btn btn-outline-light">Listar todos notebooks coletados</a>
+            <a href="/Listar-Avaliacoes" type="button" class="btn btn-outline-light">Listar avaliacoes </a>
+            <a href="/FiltrarPesquisa" type="button" class="btn btn-outline-light">Filtrar pesquisa</a>
+            <a href="/GraphRequisition" type="button" class="btn btn-outline-light">Buscar Graficos</a>
+            <a href="/" type="button" class="btn btn-outline-light">Voltar ao inicio</a>
+        </div>
+    </div>
+    <div class="row-content">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <a href="/NG-Nome-Filter" type="button" class="btn btn-success">Filtrar Notebook Gamer por Nome</a>
+                </div>
+                <div class="col">
+                    <a href="/Avaliacao-Filter" type="button" class="btn btn-success">Filtrar avaliacoes por modelo</a>
+                </div>
+                <div class="col">
+                    <a href="/NG-Price-Filter" type="button" class="btn btn-success">Filtrar por preco</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+
+<style>
+    .container-fluid {
+        padding: 0 !important;
+        height: 100vh;
+        background-color: #dcdcdc;
+    }
+    .row_header{
+        height:10%;
+        background-color: #d3d3d3;
+        padding: 1%;
+    }
+    .row1{
+        height:10%;
+        background-color: #696969;
+        padding: 1%;
+    }
+    .row-content{
+        height:80%;
+        background-color: #dcdcdc;
+        padding: 1%;
+    }
+    .row-content-1{
+        height:20%;
+        background-color: #dcdcdc;
+        margin: auto;
+    }
+    .row-content-2{
+        height:20%;
+        background-color: #dcdcdc;
+        margin: auto;
+        padding-top: 2%;
+    }
+    .btn-success {
+        width: 100%;
+        background-color: #34495E;
+        border-radius: 12px;
+        transition-duration: 0.4s;
+        padding: 3%;
+    }
+
+
+</style>
+
+</html>
